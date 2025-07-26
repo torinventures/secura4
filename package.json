@@ -1,0 +1,67 @@
+{
+  "name": "hapijs",
+  "version": "1.0.0",
+  "description": "Hapi JS backend Server",
+  "main": "index.js",
+  "engines": {
+    "node": "16.17.1",
+    "npm": "9.1.2"
+  },
+  "scripts": {
+    "test": "set NODE_ENV=test&& mocha --recursive \"src/**/test/*js\" --parallel --require config.js --exit --timeout 10000",
+    "test:coverage": "set NODE_ENV=test&& npx nyc npm run test",
+    "start:dev": "set NODE_ENV=development&& nodemon --exec \"npm run lint && node index\" | bunyan -o short",
+    "start:devlin": "NODE_ENV=development&& nodemon --exec \"node index\" | bunyan -o short",
+    "start:dev-nolint": "set NODE_ENV=development&& nodemon --exec \"node index\" | bunyan -o short",
+    "start": "set NODE_ENV=development&& npm run lint && node index.js | bunyan -o short",
+    "lint": "npx eslint .",
+    "lint:fix": "eslint --fix ./**/**.js",
+    "stag": "set NODE_ENV=staging&& node index.js",
+    "prod": "set NODE_ENV=production&& node index.js",
+    "prodlin": "NODE_ENV=production&& node index.js",
+    "husky:prepare": "husky install",
+    "husky:setup": "husky add .husky/pre-commit \"npm run lint && npm test\""
+  },
+  "author": "Aayush Gour",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/basic": "^6.0.0",
+    "@hapi/boom": "^10.0.0",
+    "@hapi/eslint-plugin": "^6.0.0",
+    "@hapi/hapi": "^20.2.2",
+    "@hapi/inert": "^7.0.0",
+    "@hapi/jwt": "^3.0.0",
+    "@hapi/vision": "^7.0.0",
+    "aws-sdk": "^2.1252.0",
+    "bcrypt": "^5.1.0",
+    "bunyan": "^1.8.15",
+    "crypto": "^1.0.1",
+    "crypto-js": "^4.1.1",
+    "dotenv": "^16.0.3",
+    "hapi-api-version": "^2.3.1",
+    "hapi-swagger": "^15.0.0",
+    "joi": "^17.7.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.6.0",
+    "mongodb-memory-server": "^8.10.1",
+    "mongoose": "^6.4.1",
+    "otp-generator": "^4.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "eslint": "^8.29.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^8.0.2",
+    "mocha": "^10.1.0",
+    "nodemon": "^2.0.20",
+    "nyc": "^15.1.0"
+  },
+  "eslintConfig": {
+    "extends": "plugin:@hapi/recommended"
+  }
+}

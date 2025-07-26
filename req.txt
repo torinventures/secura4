@@ -1,0 +1,94 @@
+Hapi.js setup
+modular approach
+plugable architecture 
+    -> in hapi js
+application logging
+eslint 
+    -> airbnb eslint
+joi validation
+swagger 
+    -> docs
+    -> setup on hapi js
+    -> might be inbuilt in hapi js
+    -> categorize based on modules
+basic jwt auth
+    -> https://auth0.com/blog/hapijs-authentication-secure-your-api-with-json-web-tokens/
+keycloak setup
+redis caching 
+    -> caching 
+gzip compression 
+    -> response from server will get compressed 
+    -> enabled in hapijs (Check)
+.env 
+    -> dev
+    -> staging
+    -> prod
+Husky
+mongodb
+    -> used mongoose
+aws file/image upload
+upload queue
+image upload image manipulation
+api versioning 
+    -> application version 
+    -> lookup best practices 
+    -> https://www.mickpatterson.com.au/blog/api-versioning-with-nodejs-and-express
+    -> https://www.npmjs.com/package/hapi-api-version
+-- api gateway 
+-- api proxy
+postman collection and test interface
+    -> https://siddharth-lakhara.medium.com/generate-postman-collections-using-node-js-68fcf425d823
+    -> https://www.npmjs.com/package/postman-collection
+    -> https://www.npmjs.com/package/postman-collection-generator
+    
+unit test cases and integration tests
+    -> set standards for test cases
+    -> Mocha, chai
+
+node with mongo
+caching
+multi env setup
+jwt auth
+    -> password hashing with bcrypt - https://www.makeuseof.com/nodejs-bcrypt-hash-verify-salt-password/
+    -> login page with forgot password 
+    -> Otp to email 
+    -> then change password
+
+s3 account
+image upload test 
+    -> upload to location
+logging everything in logfile 
+    -> logfile provided via env
+
+folder structure
+    -> Controller, service, dao
+    -> routes definition
+    -> auth.controller.js
+    -> Put dependant codes in utility and reference code from that file
+
+Error/Response Managment
+    -> Create a common module which will automatically handle Response
+
+Setup Linter
+    -> setup linter in backend
+    -> Keep track of standards
+
+File upload 
+    -> upload files in indexedDB
+    -> Create Batches and send to Backend
+    -> https://www.infoworld.com/article/3627248/how-to-use-filepond-with-nodejs.html
+    -> https://flaviocopes.com/node-upload-files-s3/
+
+istanbul package
+    -> Checks code coverage of unit test cases
+    -> use nyc because istanbul is deprecated
+
+
+component -> modules
+export endpoints from each individual module
+separate sign up and sign in modules
+create user module with sign up, forgot password etc
+define proxy for modules
+online tool which generates test cases (like JSON converter)
+
+react grid
